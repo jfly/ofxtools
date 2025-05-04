@@ -1085,8 +1085,9 @@ def merge_config(
     # - it's configured from the CLI
     # - it's configured in ofxget.cfg
     # - we don't have a URL
-    if "ofxhome" in _args or "ofxhome" in user_cfg or (not merged["url"]):
-        merge_from_ofxhome(merged)
+    # <<< TODO: hacky workaround for https://github.com/csingley/ofxtools/issues/193 >>>
+    # <<< if "ofxhome" in _args or "ofxhome" in user_cfg or (not merged["url"]):
+    # <<<     merge_from_ofxhome(merged)
 
     if not (
         merged.get("url", None)
